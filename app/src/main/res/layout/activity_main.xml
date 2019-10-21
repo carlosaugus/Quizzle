@@ -2,13 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Id_Todo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fundo1"
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/id_SetNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="91dp"
@@ -19,7 +20,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btnLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNomeJogador" />
+        app:layout_constraintTop_toBottomOf="@+id/idNomePlayer" />
 
     <Button
         android:id="@+id/btnConvidado"
@@ -53,15 +54,15 @@
         app:layout_constraintTop_toBottomOf="@+id/btnConvidado" />
 
     <TextView
-        android:id="@+id/txtNomeJogador"
+        android:id="@+id/idNomePlayer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Digite seu nome:"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintBottom_toTopOf="@+id/id_SetNome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/id_Logo" />
 
     <Button
         android:id="@+id/btnLogin"
@@ -77,17 +78,18 @@
         app:layout_constraintBottom_toTopOf="@+id/btnConvidado"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/id_SetNome" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/id_Logo"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="51dp"
         android:layout_marginTop="45dp"
         android:layout_marginEnd="51dp"
         android:layout_marginBottom="58dp"
-        app:layout_constraintBottom_toTopOf="@+id/txtNomeJogador"
+        android:contentDescription="logoID"
+        app:layout_constraintBottom_toTopOf="@+id/idNomePlayer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
