@@ -1,10 +1,12 @@
-package com.example.quizzle;
+package com.example.quizzle.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.quizzle.R;
 
 public class MainActivity extends AppCompatActivity {
 
