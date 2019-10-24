@@ -8,51 +8,36 @@
     android:background="@drawable/fundo2"
     tools:context=".CadastroActivity">
 
-    <EditText
-        android:id="@+id/edtNome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="33dp"
-        android:ems="10"
-        android:hint="Nome de usuário"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textColorHint="#FFFFFF"
+    <Button
+        android:id="@+id/btnCadastrar"
+        android:layout_width="202dp"
+        android:layout_height="79dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/botao4"
+        android:text="Cadastrar"
+        android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/edtEmail"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/opcSexo" />
 
     <EditText
         android:id="@+id/editText5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="74dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="25dp"
         android:ems="10"
         android:hint="Repetir senha"
         android:inputType="textPassword"
         android:textAlignment="center"
         android:textColorHint="#FFFFFF"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnCadastrar"
-        app:layout_constraintStart_toStartOf="@+id/editText4"
+        app:layout_constraintBottom_toTopOf="@+id/opcSexo"
+        app:layout_constraintStart_toStartOf="@+id/opcSexo"
         app:layout_constraintTop_toBottomOf="@+id/editText4" />
-
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="33dp"
-        android:ems="10"
-        android:hint="Senha"
-        android:inputType="textPassword"
-        android:textAlignment="center"
-        android:textColorHint="#FFFFFF"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/editText5"
-        app:layout_constraintStart_toStartOf="@+id/edtEmail"
-        app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
 
     <EditText
         android:id="@+id/edtEmail"
@@ -69,30 +54,58 @@
         app:layout_constraintStart_toStartOf="@+id/edtNome"
         app:layout_constraintTop_toBottomOf="@+id/edtNome" />
 
-    <Button
-        android:id="@+id/btnCadastrar"
-        android:layout_width="170dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="192dp"
-        android:background="@drawable/botao4"
-        android:text="Cadastrar"
-        android:textSize="20dp"
+    <EditText
+        android:id="@+id/edtNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="33dp"
+        android:ems="10"
+        android:hint="Nome de usuário"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColorHint="#FFFFFF"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/edtEmail"
+        app:layout_constraintStart_toStartOf="@+id/img_avatar"
+        app:layout_constraintTop_toBottomOf="@+id/img_avatar" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="33dp"
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:textColorHint="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editText5"
+        app:layout_constraintStart_toStartOf="@+id/edtEmail"
+        app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+
+    <Spinner
+        android:id="@+id/opcSexo"
+        android:layout_width="222dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="18dp"
+        android:entries="@array/opcsexo"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/btnCadastrar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText5" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="189dp"
+        android:id="@+id/img_avatar"
+        android:layout_width="214dp"
         android:layout_height="0dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="36dp"
         app:layout_constraintBottom_toTopOf="@+id/edtNome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/quizzle" />
+        app:srcCompat="@drawable/avatar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
