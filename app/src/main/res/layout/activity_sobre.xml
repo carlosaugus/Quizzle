@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fundo2"
-    tools:context=".Sobre">
+    tools:context=".View.Sobre">
 
     <EditText
         android:id="@+id/editText6"

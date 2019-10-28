@@ -6,26 +6,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fundo3"
-    tools:context=".LoginActivity">
+    tools:context=".View.LoginActivity">
 
     <EditText
-        android:id="@+id/edtEmail"
+        android:id="@+id/edtUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="27dp"
         android:ems="10"
-        android:hint="E-mail"
-        android:textAlignment="center"
+        android:hint="User"
         android:inputType="textPersonName"
+        android:textAlignment="center"
         android:textColorHint="#FFFFFF"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/edtSenha"
+        app:layout_constraintBottom_toTopOf="@+id/edtPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo_2" />
 
+
     <EditText
-        android:id="@+id/edtSenha"
+        android:id="@+id/edtPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="46dp"
@@ -36,8 +37,8 @@
         android:textColorHint="#FFFFFF"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnLogin"
-        app:layout_constraintStart_toStartOf="@+id/edtEmail"
-        app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+        app:layout_constraintStart_toStartOf="@+id/edtUser"
+        app:layout_constraintTop_toBottomOf="@+id/edtUser" />
 
     <Button
         android:id="@+id/btnLogin"
@@ -45,14 +46,15 @@
         android:layout_height="0dp"
         android:layout_marginBottom="265dp"
         android:background="@drawable/botao3"
+        android:onClick="login"
         android:text="Login"
+        android:textColor="#000000"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtSenha" />
+        app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
 
     <ImageView
         android:id="@+id/logo_2"
@@ -60,7 +62,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="71dp"
         android:layout_marginBottom="133dp"
-        app:layout_constraintBottom_toTopOf="@+id/edtEmail"
+        app:layout_constraintBottom_toTopOf="@+id/edtUser"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
