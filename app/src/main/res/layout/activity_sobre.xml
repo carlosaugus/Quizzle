@@ -14,7 +14,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        android:text="Adams Silva \n Carlos do Nascimento  \n  Gabriel Silva  \n  Guilherme Peralta \n Lucas Neves  \n Matheus de Araujo \n Renan dos Santos \n Thiago Marcondes \n  Venicio Araujo \n Victoria de Mello"
+        android:text="Adams Rogério \n Carlos do Nascimento  \n  Gabriel Silva  \n  Guilherme Peralta \n Lucas Neves  \n Matheus de Araujo \n Renan dos Santos \n Thiago Marcondes \n  Venicio Araujo \n Victoria de Mello"
         android:textAlignment="center"
         android:textColor="#ffffffff"
         android:textSize="24sp"
