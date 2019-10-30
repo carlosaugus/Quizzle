@@ -9,38 +9,6 @@
     tools:context=".View.MainActivity">
 
     <Button
-        android:id="@+id/btnConvidado"
-        android:layout_width="180dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="65dp"
-        android:background="@drawable/botao2"
-        android:onClick="abrirConvidado"
-        android:text="Convidado"
-        android:textColor="#0102e9"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnCadastar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
-
-    <Button
-        android:id="@+id/btnCadastar"
-        android:layout_width="180dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="40dp"
-        android:background="@drawable/botao4"
-        android:onClick="abrirCadastro"
-        android:text="Cadastrar"
-        android:textColor="#FFD700"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnConvidado" />
-
-    <Button
         android:id="@+id/btnLogin"
         android:layout_width="180dp"
         android:layout_height="0dp"
@@ -56,6 +24,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_Logo" />
 
+    <Button
+        android:id="@+id/btnCadastar"
+        android:layout_width="180dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="77dp"
+        android:background="@drawable/botao4"
+        android:onClick="abrirCadastro"
+        android:text="Cadastrar"
+        android:textColor="#FFD700"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnConvidado" />
+
+    <Button
+        android:id="@+id/btnConvidado"
+        android:layout_width="180dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="66dp"
+        android:background="@drawable/botao2"
+        android:onClick="abrirConvidado"
+        android:text="Convidado"
+        android:textColor="#0102e9"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnCadastar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
     <ImageView
         android:id="@+id/id_Logo"
         android:layout_width="0dp"
@@ -63,7 +63,7 @@
         android:layout_marginStart="51dp"
         android:layout_marginTop="132dp"
         android:layout_marginEnd="51dp"
-        android:layout_marginBottom="125dp"
+        android:layout_marginBottom="87dp"
         android:contentDescription="logoID"
         app:layout_constraintBottom_toTopOf="@+id/btnLogin"
         app:layout_constraintEnd_toEndOf="parent"
