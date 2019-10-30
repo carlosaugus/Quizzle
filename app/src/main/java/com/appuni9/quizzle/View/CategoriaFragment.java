@@ -74,13 +74,13 @@ public class CategoriaFragment extends Fragment {
                 viewHolder.setItemClickListener(new ItemCLickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Toast.makeText(getActivity(), String.format("%d|%d", adapter.getRef(position).getKey(), categoria.getName()), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), String.format("%d|%s", adapter.getRef(position).getKey(), categoria.getName()), Toast.LENGTH_SHORT).show();
                     }
                 });
             }
         };
 
-        adapter.notifyDataSetChanged();
         listCategoria.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
     }
 }
