@@ -23,10 +23,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(it);
     }
 
-    //public void abrirConvidado(View view){
-    //    Intent it = new Intent(this, ConvidadoActivity.class);
-    //    startActivity(it);
-    //}
+    public void abrirConvidado(View view){
+        Intent it = new Intent(this, HomeActivity.class);
+        startActivity(it);
+    }
 
     public void abrirCadastro(View view){
         Intent it = new Intent(this, CadastroActivity.class);
