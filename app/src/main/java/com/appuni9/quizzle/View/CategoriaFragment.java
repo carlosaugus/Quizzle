@@ -42,7 +42,7 @@ public class CategoriaFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         database = FirebaseDatabase.getInstance();
-        categorias = database.getReference("Categoria");
+        categorias = database.getReference("Categorias");
     }
 
     @Nullable
