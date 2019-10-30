@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
 
         //Firebase
         database = FirebaseDatabase.getInstance();
-        users = database.getReference();
+        users = database.getReference("Usuarios");
 
         edtUser = (EditText)findViewById(R.id.edtUser);
         edtPassword = (EditText)findViewById(R.id.edtPassword);
