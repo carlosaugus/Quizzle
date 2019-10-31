@@ -91,7 +91,7 @@ public class CadastroActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.child(user.getUserName()).exists()){
-                            Toast.makeText(CadastroActivity.this, "Nome de usuário já existent", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CadastroActivity.this, "Nome de usuário já existente", Toast.LENGTH_SHORT).show();
                         } else {
                             users.child(user.getUserName()).setValue(user);
                             Toast.makeText(CadastroActivity.this, "Usuário registrado com sucesso", Toast.LENGTH_SHORT).show();
