@@ -1,12 +1,22 @@
 package com.appuni9.quizzle.View;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.appuni9.quizzle.Model.Questoes;
+import com.appuni9.quizzle.Model.User;
 import com.appuni9.quizzle.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -22,22 +32,38 @@ public class GameActivity extends AppCompatActivity {
     Button btn3;
     Button btn4;
 
+    FirebaseDatabase database;
+    DatabaseReference questoes;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        this.pergunta = findViewById(R.id.pergunta);
+        int categoriaId = (int)getIntent().getSerializableExtra("categoriaId") + 1;
 
-        this.resposta1 = findViewById(R.id.resposta1);
-        this.resposta2 = findViewById(R.id.Resposta2);
-        this.resposta3 = findViewById(R.id.Resposta3);
-        this.resposta4 = findViewById(R.id.Resposta4);
+        database = FirebaseDatabase.getInstance();
+        questoes = database.getReference("Questoes");
 
-        this.btn1 = findViewById(R.id.btn_res_1);
-        this.btn2 = findViewById(R.id.Btn_Res_2);
-        this.btn3 = findViewById(R.id.Btn_Res_3);
-        this.btn4 = findViewById(R.id.Btn_Res_4);
+        try{
+            questoes.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    if(dataSnapshot.exists()) {
+                        Questoes qst = dataSnapshot.getValue(Questoes.class);
+                        Toast.makeText(GameActivity.this, "Teste: " + qst.getQuestao(), Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(GameActivity.this, "Não", Toast.LENGTH_SHORT).show();
+                    }
+                }
 
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+        } catch (Exception e){
+            Toast.makeText(GameActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
     }
 }

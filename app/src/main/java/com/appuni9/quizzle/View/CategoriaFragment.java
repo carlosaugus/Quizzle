@@ -1,5 +1,6 @@
 package com.appuni9.quizzle.View;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -42,7 +43,7 @@ public class CategoriaFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         database = FirebaseDatabase.getInstance();
-        categorias = database.getReference("Categoria");
+        categorias = database.getReference("Categorias");
     }
 
     @Nullable
@@ -55,12 +56,12 @@ public class CategoriaFragment extends Fragment {
         layoutManager = new LinearLayoutManager(container.getContext());
         listCategoria.setLayoutManager(layoutManager);
 
-        loadCategorias();
+        loadCategoria();
 
         return fragment;
     }
 
-    private void loadCategorias() {
+    private void loadCategoria() {
         adapter = new FirebaseRecyclerAdapter<Categoria, CategoriaViewHolder>(
                 Categoria.class,
                 R.layout.categoria_layout,
@@ -69,18 +70,22 @@ public class CategoriaFragment extends Fragment {
         ) {
             @Override
             protected void populateViewHolder(CategoriaViewHolder viewHolder, final Categoria categoria, int i) {
-                viewHolder.categoria_nome.setText(categoria.getName());
+                viewHolder.categoria_nome.setText(categoria.getNome());
                 Picasso.with(getActivity()).load(categoria.getImagem()).into(viewHolder.categoria_imagem);
                 viewHolder.setItemClickListener(new ItemCLickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Toast.makeText(getActivity(), String.format("%d|%s", adapter.getRef(position).getKey(), categoria.getName()), Toast.LENGTH_SHORT).show();
+                        super.onClick(view, position, isLongClick);
+                        Intent gameActivity = new Intent(getActivity(), GameActivity.class);
+                        gameActivity.putExtra("categoriaId", position);
+                        getActivity().startActivity(gameActivity);
                     }
                 });
             }
         };
 
-        listCategoria.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+        listCategoria.setAdapter(adapter);
+
     }
 }

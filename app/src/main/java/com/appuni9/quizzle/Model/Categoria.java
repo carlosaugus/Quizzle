@@ -1,23 +1,23 @@
 package com.appuni9.quizzle.Model;
 
 public class Categoria {
-    private String Name;
+    private String Nome;
     private String Imagem;
 
     public Categoria() {
     }
 
-    public Categoria(String name, String imagem) {
-        Name = name;
+    public Categoria(String nome, String imagem) {
+        Nome = nome;
         Imagem = imagem;
     }
 
-    public String getName() {
-        return Name;
+    public String getNome() {
+        return Nome;
     }
 
-    public void setName(String name) {
-        Name = name;
+    public void setNome(String nome) {
+        Nome = nome;
     }
 
     public String getImagem() {
