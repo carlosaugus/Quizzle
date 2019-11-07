@@ -3,11 +3,15 @@ package com.appuni9.quizzle.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -29,10 +33,14 @@ public class CadastroActivity extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference users;
 
+    public static final int PEDIDO_CAPTURAR_IMAGEM = 1;
+    private ImageButton imgPessoa;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
+        this.imgPessoa = (ImageButton)findViewById(R.id.imgPessoa);
 
         //Firebase
         database = FirebaseDatabase.getInstance();
@@ -46,6 +54,25 @@ public class CadastroActivity extends AppCompatActivity {
 
         btnCadastrar = (Button)findViewById(R.id.btnCadastrar);
 
+    }
+
+    public void tirarFoto(View view) {
+
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getPackageManager())!= null){
+            startActivityForResult(takePictureIntent, PEDIDO_CAPTURAR_IMAGEM);
+        }
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == PEDIDO_CAPTURAR_IMAGEM) {
+            if(resultCode==RESULT_OK) {
+                Bundle extras = data.getExtras();
+                Bitmap imageBitmap = (Bitmap) extras.get("data");
+                imgPessoa.setImageBitmap(imageBitmap);
+            }
+        }
     }
 
     public void cadastrar(View view) throws Exception {

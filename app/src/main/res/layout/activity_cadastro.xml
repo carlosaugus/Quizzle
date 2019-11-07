@@ -11,8 +11,8 @@
     <Button
         android:id="@+id/btnCadastrar"
         android:layout_width="180dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="71dp"
         android:background="@drawable/botao4"
         android:onClick="cadastrar"
         android:text="Cadastrar"
@@ -21,7 +21,6 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/opcSexo" />
 
@@ -29,7 +28,8 @@
         android:id="@+id/edtPasswordConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="17dp"
         android:ems="10"
         android:hint="Repetir senha"
         android:inputType="textPassword"
@@ -37,14 +37,14 @@
         android:textColorHint="#FFFFFF"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/opcSexo"
-        app:layout_constraintStart_toStartOf="@+id/edtPassword"
+        app:layout_constraintEnd_toEndOf="@+id/opcSexo"
         app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
 
     <EditText
         android:id="@+id/edtEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="32dp"
         android:ems="10"
         android:hint="E-mail"
         android:inputType="textPersonName"
@@ -60,7 +60,8 @@
         android:id="@+id/edtUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginBottom="32dp"
         android:ems="10"
         android:hint="Nome de usuário"
         android:inputType="textPersonName"
@@ -68,14 +69,14 @@
         android:textColorHint="#FFFFFF"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/edtEmail"
-        app:layout_constraintStart_toStartOf="@+id/img_avatar"
-        app:layout_constraintTop_toBottomOf="@+id/img_avatar" />
+        app:layout_constraintStart_toStartOf="@+id/imgPessoa"
+        app:layout_constraintTop_toBottomOf="@+id/imgPessoa" />
 
     <EditText
         android:id="@+id/edtPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="32dp"
         android:ems="10"
         android:hint="Senha"
         android:inputType="textPassword"
@@ -86,11 +87,27 @@
         app:layout_constraintStart_toStartOf="@+id/edtEmail"
         app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
 
+    <ImageButton
+        android:id="@+id/imgPessoa"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginBottom="22dp"
+        android:scaleType="centerCrop"
+        android:onClick="tirarFoto"
+        app:layout_constraintBottom_toTopOf="@+id/edtUser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/avatar" />
+
     <Spinner
         android:id="@+id/opcSexo"
         android:layout_width="212dp"
-        android:layout_height="47dp"
-        android:layout_marginBottom="20dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="22dp"
         android:backgroundTint="#ffffff"
         android:entries="@array/opcsexo"
         android:spinnerMode="dialog"
@@ -98,20 +115,7 @@
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
         app:layout_constraintBottom_toTopOf="@+id/btnCadastrar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtPasswordConfirm" />
-
-    <ImageView
-        android:id="@+id/img_avatar"
-        android:layout_width="235dp"
-        android:layout_height="137dp"
-        android:layout_marginTop="57dp"
-        android:layout_marginBottom="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/edtUser"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/avatar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
