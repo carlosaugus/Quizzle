@@ -71,4 +71,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/quizzle" />
 
+    <ImageButton
+        android:id="@+id/btnMudo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="btnMudo"
+        app:srcCompat="@android:drawable/ic_lock_silent_mode"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="232dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
